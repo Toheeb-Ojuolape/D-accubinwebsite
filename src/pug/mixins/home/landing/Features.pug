@@ -1,0 +1,61 @@
+append variables
+  -
+    const features = [
+      {
+        icon:`${CWD}assets/img/gallery/dashboardicon.png`,
+        title:'Dashboard',
+        alt: 'Dashboard',
+        details: 'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.'
+      },
+      {
+        icon:`${CWD}assets/img/gallery/comment.png`,
+        title:'Comment',
+        alt: 'Comment',
+        details: 'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.'
+      },
+      {
+        icon:`${CWD}assets/img/gallery/trilored.png`,
+        title:'Tailored',
+        alt: 'Tailored',
+        details: 'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.'
+      },
+      {
+        icon:`${CWD}assets/img/gallery/statistics.png`,
+        title:'Statistic',
+        alt: 'Statistic',
+        details: 'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.'
+      },
+      {
+        icon:`${CWD}assets/img/gallery/profile.png`,
+        title:'Profiles',
+        alt: 'Profiles',
+        details: 'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.'
+      },
+      {
+        icon:`${CWD}assets/img/gallery/folder.png`,
+        title:'Folders',
+        alt: 'Folders',
+        details: 'A pseudo-Latin text used in web design, layout, and printing in place of things to emphasise layouts for previewing layouts and visual mockups.'
+      }
+    ] 
+mixin Features 
+  +Section
+    h1.display-6.fw-semi-bold  Feature
+    p.fs-2 Our landing page template works on all devices, so you only have to set.
+    .row.mb-4.mt-6
+      +featureItem(features[0]) 
+      +featureItem(features[1]) 
+    .row.mb-4
+      +featureItem(features[2]) 
+      +featureItem(features[3]) 
+    .row
+      +featureItem(features[4]) 
+      +featureItem(features[5]) 
+
+mixin featureItem(item) 
+  .col-md-6
+    .border.rounded-1.border-700.h-100.features-items
+      .p-5
+        img(src=`${item.icon}` alt=`${item.alt}` style={width:'48px',height:'48px'})
+        h3.pt-3.lh-base #{item.title}
+        p.mb-0 #{item.details}

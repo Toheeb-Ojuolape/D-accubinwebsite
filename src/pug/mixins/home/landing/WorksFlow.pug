@@ -1,0 +1,38 @@
+append variables
+  -
+    const worksFlow = [
+      {
+        img: `${CWD}assets/img/gallery/comment1.png`,
+        title: 'How does it work?',
+        details: 'Our landing page template works on all devices, so you only have to set it up once, and get beautiful results.'
+      },
+      {
+        img: `${CWD}assets/img/gallery/comment2.png`,
+        title: 'How does it work?',
+        details: 'Our landing page template works on all devices, so you only have to set it up once, and get beautiful results.'
+      },
+      {
+        img: `${CWD}assets/img/gallery/comment3.png`,
+        title: 'How does it work?',
+        details: 'Our landing page template works on all devices, so you only have to set it up once, and get beautiful results.'
+      }
+    ]
+  -
+    var workflowIntro = {
+      title: 'How does it work?',
+      description: 'SAFLOW'
+    }
+
+mixin WorksFlowItem(config, index) 
+  .row.mt-6.flex-center.justify-content-xl-evenly.px-xl-5
+    .col-md-7.col-lg-6(class = `${index % 2 === 0 &&  'order-md-1'}`)
+      img.w-100(src=`${config.img}` alt="...")
+    .col-md-5.col-lg-4
+      h3.fs-xl-7.fs-lg-4.fs-md-3.mt-5.mt-md-0 #{config.title}
+      p.fs-xl-1.ls-3.pe-xl-2  #{config.details}
+
+mixin WorksFlow
+  +Section.mt-5
+    +SectionTitle(workflowIntro)
+    each item, index in worksFlow 
+      +WorksFlowItem(item, index)
